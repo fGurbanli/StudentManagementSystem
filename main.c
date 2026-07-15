@@ -7,7 +7,6 @@ struct Student {
     float gpa;
 };
 
-
 int GetIntInput();
 float GetFloatInput();
 void GetStudentData(struct Student* student);
@@ -35,10 +34,10 @@ void GetStudentData(struct Student* student)
     printf("\nPlease enter student name: ");
     fgets(student->name, sizeof(student->name), stdin);
 
-    printf("\nPlease enter student age: ");
+    printf("Please enter student age: ");
     student->age = GetIntInput();
 
-    printf("\nPlease enter student gpa: ");
+    printf("Please enter student gpa: ");
     student->gpa = GetFloatInput();
 }
 float CalculateAverage(struct Student student[], int count) {
