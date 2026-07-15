@@ -25,6 +25,7 @@ int main(void) {
         GetStudentData(&students[i]);
     }
 
+    PrintStudents(students, count);
     return 0;
 }
 
@@ -68,11 +69,11 @@ void PrintStudents(struct Student students[], int count)
     {
         printf("\n====STUDENT %d====", i + 1);
         printf("\nStudent name: %s", students[i].name);
-        printf("\nStudent age: %d", students[i].age);
-        printf("\nStudent gpa: %.2f", students[i].gpa);
+        printf("Student age: %d", students[i].age);
+        printf("\nStudent gpa: %.2f\n", students[i].gpa);
     }
     printf("\nClass's average gpa is: %.2f", CalculateAverage(students, count));
-    printf("\n Best student is %s", students[FindBestStudent(students,count)].name);
+    printf("\nBest student is %s", students[FindBestStudent(students,count)].name);
 }
 
 int GetIntInput()
