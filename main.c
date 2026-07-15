@@ -13,7 +13,7 @@ float GetFloatInput();
 void GetStudentData(struct Student* student);
 void PrintStudents(struct Student students[], int count);
 float CalculateAverage(struct Student students[], int count);
-void FindBestStudent(struct Student students[], int count);
+int FindBestStudent(struct Student students[], int count);
 
 int main(void) {
 
@@ -49,7 +49,19 @@ float CalculateAverage(struct Student student[], int count) {
     }
     avg = sum / count;
     return avg;
-}g
+}
+int FindBestStudent(struct Student students[], int count)
+{
+    int bestIndex = 0;
+    for (int i = 1; i < count; i++)
+    {
+        if (students[bestIndex].gpa < students[i].gpa)
+        {
+            bestIndex = i;
+        }
+    }
+    return bestIndex;
+}
 
 int GetIntInput()
 {
