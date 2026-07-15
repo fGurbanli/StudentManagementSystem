@@ -1,25 +1,36 @@
 #include <stdio.h>
 #include <string.h>
 
+struct Student {
+    char name[20];
+    int age;
+    float gpa;
+};
+
+struct Student student1, student2, student3;
+
 int GetIntInput();
 float GetFloatInput();
+void FirstStudentData(struct Student std1);
+void SecondStudentData(struct Student std2);
+void ThirdStudentData(struct Student std3);
+void FindAvg();
+void FindBestGpa();
+void PrintDatas();
 
 int main(void) {
-    struct Student {
-        char name[20];
-        int age;
-        float gpa;
-    };
 
-    printf("Please enter student count in a class: ");
-    int count = GetIntInput();
-    struct Student student[count];
+    return 0;
+}
 
-    for (int i = 0; i < count; i++)
-    {
-        printf("Name of the %dth student", i);
-
-    }
+void FirstStudentData(struct Student std1)
+{
+    printf("Please enter name of first student: ");
+    fgets(std1.name, sizeof(std1.name), stdin);
+    printf("\nPlease enter first student age: ");
+    int age = GetIntInput();
+    printf("\nPlease enter first student gpa: ");
+    float gpa = GetFloatInput();
 }
 
 int GetIntInput()
@@ -36,7 +47,6 @@ int GetIntInput()
     }
     return input;
 }
-
 float GetFloatInput()
 {
     float input;
