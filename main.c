@@ -7,30 +7,38 @@ struct Student {
     float gpa;
 };
 
-struct Student student1, student2, student3;
 
 int GetIntInput();
 float GetFloatInput();
-void FirstStudentData(struct Student std1);
-void SecondStudentData(struct Student std2);
-void ThirdStudentData(struct Student std3);
-void FindAvg();
-void FindBestGpa();
-void PrintDatas();
+void GetStudentData(struct Student* student);
+void PrintStudents(struct Student students[], int count);
+float CalculateAverage(struct Student students[], int count);
+void FindBestStudent(struct Student students[], int count);
 
 int main(void) {
+
+    printf("Please enter student count: ");
+    int count = GetIntInput();
+    struct Student students[count];
+    for (int i = 0; i < count; i++)
+    {
+        GetStudentData(&students[i]);
+    }
 
     return 0;
 }
 
-void FirstStudentData(struct Student std1)
+void GetStudentData(struct Student* student)
 {
-    printf("Please enter name of first student: ");
-    fgets(std1.name, sizeof(std1.name), stdin);
-    printf("\nPlease enter first student age: ");
-    int age = GetIntInput();
-    printf("\nPlease enter first student gpa: ");
-    float gpa = GetFloatInput();
+    while (getchar() != '\n');
+    printf("\nPlease enter student name: ");
+    fgets(student->name, sizeof(student->name), stdin);
+
+    printf("\nPlease enter student age: ");
+    student->age = GetIntInput();
+
+    printf("\nPlease enter student gpa: ");
+    student->gpa = GetFloatInput();
 }
 
 int GetIntInput()
@@ -38,7 +46,7 @@ int GetIntInput()
     int input;
     while (1)
     {
-        if (scanf("%d", &input) == 1)
+        if (scanf("%d", &input) == 1 && input > 0)
         {
             break;
         }
@@ -52,7 +60,7 @@ float GetFloatInput()
     float input;
     while (1)
     {
-        if (scanf("%f", &input) == 1)
+        if (scanf("%f", &input) == 1 && input > 0)
         {
             break;
         }
