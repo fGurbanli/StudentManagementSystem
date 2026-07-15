@@ -40,6 +40,16 @@ void GetStudentData(struct Student* student)
     printf("\nPlease enter student gpa: ");
     student->gpa = GetFloatInput();
 }
+float CalculateAverage(struct Student student[], int count) {
+    float avg;
+    float sum;
+    for (int i = 0; i < count; i++)
+    {
+        sum = student[i].gpa;
+    }
+    avg = sum / count;
+    return avg;
+}g
 
 int GetIntInput()
 {
