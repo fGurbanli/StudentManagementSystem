@@ -90,6 +90,4 @@ Best student is Emma
 
 ## Author
 
-Furkan Gurbanli
-
-GitHub: https://github.com/fGurbanli
+Furgan Gurbanli
